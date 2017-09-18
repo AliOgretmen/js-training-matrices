@@ -3,25 +3,32 @@
  *
  */
 
+let matrix1 = 
+    [
+        [1, 2, 3],
+        [0, 0, 5],
+        [4, 2, -1]
+    ];
+
+let matrix2 = 
+    [
+        [-2, 3, 0],
+        [0, -1, 0],
+        [1, 5, -1]
+    ];
 
 describe('Test Suite - Test your own functions with edge cases', () => {
 
-    it('parse https://it-club-oberland.ch#section.', function(){
-        let analysis = analyseUrl('https://it-club-oberland.ch#section');
-        
-        analysis.schema.should.be.equal('https');
-        analysis.host.should.be.equal('it-club-oberland.ch');
-        analysis.fragment.should.be.equal('section');
+    it('Addition of two matrices', function(){
+        let result = matrix1.add(matrix2);
+        result = result.toString();
+        console.log(result);
+        result.should.not.be.equal(-1,5,3,0,-1,5,5,7,-2);
     });
-      
-    
-    it('parse http://localhost:8080/api?sort=ASC', function(){
-        let analysis = analyseUrl('http://localhost:8080/api?sort=ASC');
-        
-        analysis.schema.should.be.equal('http');
-        analysis.host.should.be.equal('localhost');
-        analysis.port.should.be.equal('8080');
-        analysis.path.should.be.equal('api');
-        analysis.query.should.be.equal('sort=ASC');
+    it('Substract of two matrices', function(){
+        let result = matrix1.substract(matrix2);
+        result = result.toString();
+        console.log(result);
+        result.should.not.be.equal(3,-1,3,0,1,5,3,-3,0);
     });
 });
